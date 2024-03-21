@@ -10,4 +10,5 @@ let employee: {
         console.log(date);
     }
 };
-employee.name = "Safdar"
+ let one = employee
+ 
