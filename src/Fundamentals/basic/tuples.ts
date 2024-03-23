@@ -1,4 +1,3 @@
-let user: [number,string] = [1,'Safdar'];
-user[0].toString;
-user[1].length;
-user.push()
+let user2: [number,string] = [1,'Safdar'];
+user2[0].toString;
+user2[1].length;
