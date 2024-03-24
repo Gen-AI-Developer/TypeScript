@@ -58,6 +58,17 @@ class Student implements Person {
 
 const student1: Person = new Student("Alice", 25);
 student1.sayHello();
+
+interface vehicle {
+    model: number,
+    make: string,
+    e_number: string
+}
+
+
+
+
+
 // Output: Hello, my name is Alice and I am 25 years old.
 // In this example, the Person interface defines the
 // structure expected for a person object, with properties
