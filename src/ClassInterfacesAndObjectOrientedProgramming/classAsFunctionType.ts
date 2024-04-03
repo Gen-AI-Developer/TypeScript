@@ -1,14 +1,22 @@
 // Classes 101
 type CBase = 'classic' | 'thin' | 'thick' | 'garlic'
-
-class CPizza {
-    constructor(title: string, price: number) {
-        this.title = title
-        this.price = price
-
+interface hasFormater {
+    format(): string
+}
+class Menu implements hasFormater {
+    constructor(private title: string, private price: number) { }
+    public get details(): string {
+        return `--${this.title} - ${this.price} `
     }
-    title: string
-    price: number
+    format() {
+        return 'this is string of hasformater. Interface'
+    }
+}
+
+class CPizza extends Menu {
+    constructor(title: string, price: number) {
+        super(title, price)
+    }
     base: CBase = 'classic'
     toppings: string[] = []
 
@@ -33,3 +41,7 @@ function addMashroomOnPizza(params: CPizza[]) {
     }
 }
 addMashroomOnPizza([cpizza])
+function printMenuItem(printMenuItem: Menu) {
+    console.log(printMenuItem.details)
+
+}
