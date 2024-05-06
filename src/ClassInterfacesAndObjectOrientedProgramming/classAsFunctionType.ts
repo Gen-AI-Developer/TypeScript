@@ -3,7 +3,7 @@ type CBase = 'classic' | 'thin' | 'thick' | 'garlic'
 interface hasFormater {
     format(): string
 }
-class Menu implements hasFormater {
+abstract class Menu implements hasFormater {
     constructor(private title: string, private price: number) { }
     public get details(): string {
         return `--${this.title} - ${this.price} `
