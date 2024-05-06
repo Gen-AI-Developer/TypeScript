@@ -1,20 +1,21 @@
 class Account {
-    id: number;
-    name: string;
-    balance: number;
+    nickname?: string;
 
-    constructor(id: number, name: string, balance: number) {
-        this.id = id
-        this.name = name
-        this.balance = balance
-    }
+    constructor(
+        public readonly id: number,
+        public name: string,
+        private _balance: number) { }
+
     deposit(amount: number): void {
         if (amount <= 0)
             throw new Error("invalid Balance")
-        this.balance += amount
+        this._balance += amount
+    }
+    getBalance(): number {
+
+        return this._balance
     }
 }
 let account = new Account(234, 'Safdar', 0)
 account.deposit(1000)
-console.log(account)
-console.log(Account)
+account.getBalance()
