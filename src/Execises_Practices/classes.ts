@@ -11,11 +11,13 @@ class Account {
             throw new Error("invalid Balance")
         this._balance += amount
     }
-    getBalance(): number {
+    //Getter
+    get balance(): number {
 
         return this._balance
     }
 }
 let account = new Account(234, 'Safdar', 0)
 account.deposit(1000)
-account.getBalance()
+console.log(account.balance)
+// Getter and Setters
