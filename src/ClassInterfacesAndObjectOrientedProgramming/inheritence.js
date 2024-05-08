@@ -19,18 +19,12 @@ var AnyPerson = /** @class */ (function () {
         this.lastName = lastName;
     }
     Object.defineProperty(AnyPerson.prototype, "fullName", {
-        get: function () {
-            return this.firstName + ' ' + this.lastName;
-        },
+        get: function () { return this.firstName + ' ' + this.lastName; },
         enumerable: false,
         configurable: true
     });
-    AnyPerson.prototype.walk = function () {
-        console.log("Walking");
-    };
-    AnyPerson.prototype.talk = function () {
-        console.log("Talking");
-    };
+    AnyPerson.prototype.walk = function () { console.log("Walking"); };
+    AnyPerson.prototype.talk = function () { console.log("Talking"); };
     return AnyPerson;
 }());
 var AnyStudent = /** @class */ (function (_super) {
@@ -42,12 +36,20 @@ var AnyStudent = /** @class */ (function (_super) {
         _this.lastName = lastName;
         return _this;
     }
-    AnyStudent.prototype.takeTest = function () {
-        console.log("Taking Test");
-    };
+    AnyStudent.prototype.takeTest = function () { console.log("Taking Test"); };
     return AnyStudent;
 }(AnyPerson));
-var ss = new AnyStudent(23, "Syed", "Safdar");
-console.log(ss.fullName);
-console.log(ss.talk());
-console.log(ss.takeTest());
+var Teacher = /** @class */ (function (_super) {
+    __extends(Teacher, _super);
+    function Teacher() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return Teacher;
+}(AnyPerson));
+var t = new Teacher('Syed', 'Safdar');
+console.log(t.fullName);
+/// Method Overriding
+// let ss = new AnyStudent(23, "Syed", "Safdar");
+// console.log(ss.fullName)
+// console.log(ss.talk())
+// console.log(ss.takeTest())
