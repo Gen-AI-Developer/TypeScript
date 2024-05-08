@@ -39,16 +39,25 @@ var AnyStudent = /** @class */ (function (_super) {
     AnyStudent.prototype.takeTest = function () { console.log("Taking Test"); };
     return AnyStudent;
 }(AnyPerson));
+/// Method Overriding
 var Teacher = /** @class */ (function (_super) {
     __extends(Teacher, _super);
     function Teacher() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    Object.defineProperty(Teacher.prototype, "fullName", {
+        // This method will be overrided here from Base Class 
+        get: function () {
+            return 'Prof. ' + _super.prototype.fullName;
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Teacher;
 }(AnyPerson));
+/// Method Overriding
 var t = new Teacher('Syed', 'Safdar');
 console.log(t.fullName);
-/// Method Overriding
 // let ss = new AnyStudent(23, "Syed", "Safdar");
 // console.log(ss.fullName)
 // console.log(ss.talk())
