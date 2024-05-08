@@ -11,8 +11,8 @@ class AnyStudent extends AnyPerson {
     constructor
         (
             public studentID: number,
-            public firstName: string,
-            public lastName: string
+            public override firstName: string,
+            public override lastName: string
         ) {
         super(firstName, lastName)
     }
