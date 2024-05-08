@@ -21,6 +21,10 @@ class AnyStudent extends AnyPerson {
 /// Method Overriding
 
 class Teacher extends AnyPerson {
+   // This method will be overrided here from Base Class 
+    get fullName() { return this.firstName + ' ' + this.lastName }
+    walk() { console.log("Walking") }
+    talk() { console.log("Talking") }
 
 }
 /// Method Overriding
