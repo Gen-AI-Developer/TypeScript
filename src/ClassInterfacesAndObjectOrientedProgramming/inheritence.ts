@@ -3,7 +3,7 @@ class AnyPerson {
         public firstName: string,
         public lastName: string,
     ) { }
-    get fullName() { return this.firstName + ' ' + this.lastName }
+    protected get fullName() { return this.firstName + ' ' + this.lastName }
     walk() { console.log("Walking") }
     talk() { console.log("Talking") }
 }
