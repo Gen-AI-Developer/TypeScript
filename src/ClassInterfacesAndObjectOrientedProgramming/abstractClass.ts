@@ -1,8 +1,8 @@
-class Shape {
+abstract class Shape {
     constructor(public color: string) {
 
     }
-    render() { }
+    abstract render(): void;
 }
 
 class Circle extends Shape {
@@ -14,5 +14,5 @@ class Circle extends Shape {
     }
 }
 
-let shape = new Shape('red');
+let shape = new Circle(34, 'Blue')
 shape.render();
